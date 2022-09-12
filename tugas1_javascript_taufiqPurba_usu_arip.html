@@ -1,0 +1,70 @@
+<script languange="javascript">
+    var nama = "Ridwan";
+    var jabatan = "Manager";
+    var status = "Menikah";
+
+    //struktur kendali
+    if (jabatan == 'Manager') {
+        gaPok = 15000000;
+    }
+    else if (jabatan == 'Asisten Manager') {
+        gaPok = 10000000;
+    }
+    else if (jabatan == 'Staff') {
+        gaPok = 5000000;
+    }
+    else gaPok = 0;
+
+    let tunJab = 0.15 * gaPok;
+    let bpjs = 0.10 * gaPok;
+
+    //tenary
+    let tunGa = (status == 'Menikah') ? 0.20 * gaPok : 0;
+
+    let total = gaPok + tunJab + bpjs + tunGa;
+
+    document.write(
+        "<table align='center' border ='1' cellpadding='10px' cellspacing='0'>" +
+            "<thead>" +
+                "<tr  bgcolor=#88b04b>" +
+                    "<th colspan='2'>Detail Gaji Pegawai</th>" +
+                "</tr>" +
+            "</thead>" +
+        "<tbody>" +
+            "<tr>" +
+                "<td>Nama</td>" +
+                "<td align='right'>" + nama + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>Jabatan</td>" +
+                "<td align='right'>" + jabatan + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>Status</td>" +
+                "<td align='right'>" + status + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>Gaji Pokok</td>" +
+                "<td align='right'>" + gaPok + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>Tunjangan Jabatan</td>" +
+                "<td align='right'>" + tunJab + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>BPJS</td>" +
+                "<td align='right'>" + bpjs + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>Tunjangan Keluarga</td>" +
+                "<td align='right'>" + tunGa + "</td>" +
+            "</tr>" +
+        "</tbody>" +
+        "<tfoot>" +
+            "<tr bgcolor=#88b04b>" +
+                "<th>Total Gaji</th>" +
+                "<th>" + total + "</th>" +
+            "</tr>" +
+        "</tfoot>"
+    );
+</script>
