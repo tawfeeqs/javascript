@@ -1,0 +1,74 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="10px">
+    <thead style="color: #ffffff; background-color: #000000;">
+        <tr>
+            <th>NO</th>
+            <th>NAMA</th>
+            <th>JABATAN</th>
+            <th>AGAMA</th>
+            <th>GAJI POKOK</th>
+            <th>TUNJANGAN JABATAN</th>
+            <th>TUNJANGAN KESEHATAN</th>
+            <th>GAJI KOTOR</th>
+            <th>ZAKAT PROFESI</th>
+            <th><i>TAKE HOME PAY</i></th>
+        </tr>
+    </thead>
+
+<script language = "javascript">
+
+    var n, jabatan, agama, warna, zaProf, gaPok, thp;
+
+    for (n = 1; n <= 100; n++) {
+
+        //if multi kondisi
+        if (n >= 1 && n < 26) jabatan = "Manager";
+        else if (n >= 26 && n < 51) jabatan = "Asisten Manager";
+        else if (n >= 51 && n < 76) jabatan = "Supervisor";
+        else jabatan = "Staff";
+
+        switch (jabatan) {
+            case "Manager": gaPok = 15000000; break;
+            case "Asisten Manager": gaPok = 10000000; break;
+            case "Supervisor": gaPok = 7000000; break;
+            case "Staff": gaPok = 4000000; break;
+            default: gaPok = "-"; break;
+        }
+
+        let tunJab = 0.20 * gaPok;
+        let tunKes = 0.10 * gaPok;
+        let gaTor = gaPok + tunJab + tunKes;
+
+        //ternary
+        agama = (n % 2 == 1) ? "Muslim" : "Non Muslim";
+
+        switch (agama) {
+            case "Muslim" : warna = "#dfcfbe"; break;
+            case "Non Muslim" : warna = "#55b4b0"; break;
+            default: warna = "#ffffff"; break;
+        }
+
+        agama == "Muslim" && gaTor >= 7000000 ? zaProf = 0.025 * gaTor : zaProf = 0;
+
+        thp = gaTor - zaProf;
+        
+        document.write(
+            `<tbody>
+                <tr bgcolor = ${warna}>
+                    <td align="center">${n}</td>
+                    <td>Pegawai${n}</td>
+                    <td>${jabatan}</td>
+                    <td>${agama}</td>
+                    <td align="right">Rp${gaPok}</td>
+                    <td align="right">Rp${tunJab}</td>
+                    <td align="right">Rp${tunKes}</td>
+                    <td align="right">Rp${gaTor}</td>
+                    <td align="right">Rp${zaProf}</td>
+                    <td align="right">Rp${thp}</td>
+                </tr>
+            </tbody>`
+        );
+    }
+
+</script>
+
+</table>
