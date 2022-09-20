@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tugas 6 JavaScript</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <table class="table table-sm table-bordered border-secondary mx-auto w-50 text-center my-3 ">
+            <caption>Data rata-rata gempa di Indonesia berdasarkan wilayah serta dampak yang dirasakan &copy;1988 (fiksi)</caption>
+            <thead>
+                <tr class="table-success">
+                    <th>NO</th>
+                    <th>LOKASI</th>
+                    <th>SKALA (SR)</th>
+                    <th>DAMPAK</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+
+                <script>
+
+                    let n = 1;
+
+                    class Gempa {
+                        constructor(lokasi, skala) {
+                            this.lokasi = lokasi;
+                            this.skala = skala;
+                        }
+
+                        getDampak() {
+                            if(this.skala <= 2) this.dampak = 'Tidak terasa';
+                            else if(this.skala > 2 && this.skala <= 4) this.dampak = 'Bangunan retak-retak';
+                            else if(this.skala >= 4 && this.skala <= 6) this.dampak = 'Bangunan roboh';
+                            else if(this.skala > 6) this.dampak = 'Bangunan roboh dan berpotensi tsunami';
+                            else this.dampak = '';
+
+                            return this.dampak;
+                        }
+
+                        infoGempa() {
+                            document.write(
+                            `<tr>
+                                <td>${n++}</td>
+                                <td>${this.lokasi}</td>
+                                <td>${this.skala}</td>
+                                <td>${this.getDampak()}</td>
+                            </tr>`);
+                        }
+                    }
+
+                    //-------membuat objek-----
+                    g1 = new Gempa('Batu Bara', 3.6);
+                    g2 = new Gempa('Bekasi', 1);
+                    g3 = new Gempa('Depok', 12);
+                    g4 = new Gempa('Jogja', 2.3);
+                    g5 = new Gempa('Semarang', 4);
+                    g6 = new Gempa('Tangerang', 2.8);
+                    g7 = new Gempa('Aceh', 5);
+                    g8 = new Gempa('Papua', 3.3);
+                    g9 = new Gempa('Bandung', 1.8);
+                    g10 = new Gempa('Surabaya', 5.3);
+
+                    g1.infoGempa(); g2.infoGempa(); g3.infoGempa(); g4.infoGempa(); g5.infoGempa(); g6.infoGempa(); g7.infoGempa(); g8.infoGempa(); g9.infoGempa(); g10.infoGempa();
+
+                </script>
+
+            </tbody>
+        </table>
+    </body>
+</html>
