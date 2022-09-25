@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tugas 7 JavaScript</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Hewan Unggas
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-evenly">
+                            <div class="ayam">Ayam</div>
+                            <div class="kalkun">Kalkun</div>
+                            <div class="merpati">Merpati</div>
+                            <div class="bebek">Bebek</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Hewan Ternak
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-evenly">
+                            <div class="domba">Domba</div>
+                            <div class="kelinci">Kelinci</div>
+                            <div class="kuda">Kuda</div>
+                            <div class="sapi">Sapi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                        Hewan Buas
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-evenly">
+                            <div class="serigala">Serigala</div>
+                            <div class="singa">Singa</div>
+                            <div class="gajah">Gajah</div>
+                            <div class="ular">Ular</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+        <script>
+            $("document").ready(function() {
+                $("div.ayam").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1614120263669-43911b47f0b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/chicken.mp3",
+                        'volume': "0.1",
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.kalkun").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1645945469524-918ed090776a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=623&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/turkey.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.merpati").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1641144355850-e7991d050bdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/dove.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.bebek").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1618614944895-fc409a83ad80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/duck.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.domba").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1588672204561-5638420df69c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/sheep.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.kelinci").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1589933767411-38a58367efd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=558&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/rabbit.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.kuda").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1573751056139-2ab65b6b03be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=612&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/horse.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.sapi").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1568794045709-edaad184e7da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/cow.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.serigala").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1579824894028-99f6912570d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/wolf.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.singa").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1569979228103-c492b8ab384b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/lion.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.gajah").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1591789268166-adc178499375?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/elephant.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+                $("div.ular").click(function() {
+                    $(this).css({
+                        color: "transparent",
+                        background: "url(https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=569&q=80)",
+                        backgroundSize: "cover",
+                        width: "180px",
+                        height: "180px"
+                    });
+                    $("<audio></audio>").attr({
+                        'src': "https://www.google.com/logos/fnbx/animal_sounds/rattlesnake.mp3",
+                        'volume': 0.1,
+                        'autoplay': "autoplay"
+                    }) .appendTo("div");
+                });
+            })
+        </script>
+    </body>
+</html>
